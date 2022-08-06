@@ -7,9 +7,9 @@ class ConnectionDB:
 
     def conn(self):
         db = mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="root",
+            host="db-artificialis.cij039qweohb.us-east-1.rds.amazonaws.com",
+            user="admin",
+            password="12345678",
             database="artificialisDB"
         )
         cursor = db.cursor()
