@@ -1,13 +1,13 @@
-from os import getenv
+import os
 import boto3
 
 class Comprehend:
 
     def __init__(self):
         self.client = boto3.client('comprehend',
-        aws_access_key_id=getenv("ACCESS_KEY"),
-        aws_secret_access_key=getenv("SECRET_KEY"),
-        aws_session_token=getenv("SESSION_TOKEN")
+        aws_access_key_id=os.environ.get("ACCESS_KEY", None),
+        aws_secret_access_key=os.environ.get("SECRET_KEY", None),
+        aws_session_token=os.environ.get("SESSION_TOKEN", None)
         )
 
     def detectar_sentimento(self, texto):
