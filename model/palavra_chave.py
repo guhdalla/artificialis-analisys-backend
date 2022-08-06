@@ -70,7 +70,7 @@ class PalavraChave:
         self.__classificacao_nps = classificacao_nps
 
     def converter_in_comprehend(result, id_pesquisa):
-        return PalavraChave(None, result["Score"], result["Text"], result["BeginOffset"], result["EndOffset"], id_pesquisa)
+        return PalavraChave(None, result["Score"], result["Text"], result["BeginOffset"], result["EndOffset"], id_pesquisa, None)
 
     def builder(row):
         return PalavraChave(row[0], row[1], row[2], row[3], row[4], row[5], row[6])

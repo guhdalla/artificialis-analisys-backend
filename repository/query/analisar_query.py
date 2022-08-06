@@ -11,9 +11,12 @@ class AnalisarQuery:
             p.data,
             p.classificacao_nps,
             p.valor_nps,
-            p.foi_analisado
+            p.foi_analisado,
+            s.sentimento
             FROM pesquisa p
-            WHERE foi_analisado = 0 LIMIT 10;
+            LEFT JOIN sentimento s
+            ON s.id_pesquisa = p.id_pesquisa
+            WHERE p.foi_analisado = 0 LIMIT 10;
         """
 
     def inserir_sentimento(self):

@@ -9,7 +9,7 @@ class AnalisarRepository:
         self.query = AnalisarQuery()
 
     def listar_pesquisa_nao_analisado(self, query):
-        return self.sql_cmd.listar(query, Pesquisa)
+        return self.sql_cmd.listar(query, Pesquisa, False)
 
     def salvar_sentimento(self, query, s):
         params = (s.sentimento, s.neutro, s.positivo, s.negativo, s.misturado, s.id_pesquisa)

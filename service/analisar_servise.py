@@ -13,7 +13,6 @@ class AnalisarService:
 
     def analisar(self):
         ls_pesquisa = self.repository.listar_pesquisa_nao_analisado(self.query.listar_pesquisa_nao_analisado())
-
         for p in ls_pesquisa:
             self.analisar_sentimento(p.texto, p.id)
             self.analisar_palavra_chave(p.texto, p.id)
