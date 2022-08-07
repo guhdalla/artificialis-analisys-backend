@@ -12,6 +12,6 @@ class Nps(BaseModel):
     dist_neutro: float
     dist_detrator: float
 
-@router.get("/nps", response_model=Nps)
-def info():
+@router.get("/nps")
+async def info():
     return service.info()

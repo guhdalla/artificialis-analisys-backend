@@ -6,5 +6,5 @@ router = APIRouter()
 service = AnalisarService()
 
 @router.post("/analisar")
-def analisar():
+async def analisar():
     return service.analisar()

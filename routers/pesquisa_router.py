@@ -1,4 +1,6 @@
+from array import array
 from datetime import date
+from typing import List
 from urllib import response
 from fastapi import APIRouter, Depends, status, HTTPException
 from service.pesquisa_service import PesquisaService
@@ -17,6 +19,6 @@ class Pesquisa(BaseModel):
     foi_analisado: bool
     sentimento: str
 
-@router.get("/pesquisa", response_model=Pesquisa)
-def listar(size: int = 10, offset: int = 0, sentimento: str = None, nps: str = None, palavraChave: str = None):
+@router.get("/pesquisa", response_model=List[Pesquisa])
+async def listar(size: int = 10, offset: int = 0, sentimento: str = None, nps: str = None, palavraChave: str = None):
     return service.listar(size, offset, palavraChave, sentimento, nps)

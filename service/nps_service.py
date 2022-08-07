@@ -20,4 +20,4 @@ class NpsService:
 
         score = dist_promotor - dist_detrator
 
-        return Nps(score, dist_promotor, dist_neutro, dist_detrator)
+        return Nps(float(score), float(dist_promotor), float(dist_neutro), float(dist_detrator))
