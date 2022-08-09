@@ -1,8 +1,6 @@
-from array import array
 from datetime import date
 from typing import List
-from urllib import response
-from fastapi import APIRouter, Depends, status, HTTPException
+from fastapi import APIRouter
 from service.pesquisa_service import PesquisaService
 from pydantic import BaseModel
 
