@@ -17,4 +17,3 @@ class Comprehend:
     def detectar_palavra_chave(self, texto):
         result = self.client.detect_key_phrases(Text=texto, LanguageCode='en')
         return result
-
