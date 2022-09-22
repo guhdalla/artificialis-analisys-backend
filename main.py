@@ -34,8 +34,6 @@ app.add_middleware(
     allow_headers=["*"],
     app_name=application_name
 )
-
-app.add_middleware(PrometheusMiddleware, )
 app.add_route("/metrics", handle_metrics)
 app.include_router(root.router, tags=["App"])
 app.include_router(health_check.router, tags=["App"])
