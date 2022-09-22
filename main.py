@@ -31,8 +31,7 @@ app.add_middleware(
     allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"],
-    app_name=application_name
+    allow_headers=["*"]
 )
 app.add_route("/metrics", handle_metrics)
 app.include_router(root.router, tags=["App"])
